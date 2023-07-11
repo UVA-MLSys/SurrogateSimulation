@@ -1,11 +1,8 @@
-# Surrogate Simulation For Earthquake Modeling And Prediction
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
+This work focuses on creating a surrogate simulation of the ETAS Earthquake prediction
+code by John Rundle and the team at UC Davis (more info on ETAS... & `` {cite}`etas citation` ``). We created a 
+neural network (more info about the model...). Using our model we conducted  ... 
 
 ```{tableofcontents}
 ```

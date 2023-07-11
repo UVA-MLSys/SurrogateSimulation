@@ -2,8 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Surrogate Simulation
-author: Vishal Kamalakrishnan, Zach Russell, Kevin Ma, and Justin Zheng
-logo: logo.png
+author: UVA MLSys - Vishal Kamalakrishnan, Zach Russell, Kevin Ma, and Justin Zheng
+logo: uva_logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
