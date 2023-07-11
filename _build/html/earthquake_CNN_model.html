@@ -1,0 +1,1467 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Install Dependencies &#8212; Surrogate Simulation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'earthquake_CNN_model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Surrogate Simulation For Earthquake Modeling And Prediction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fearthquake_CNN_model.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/earthquake_CNN_model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Install Dependencies</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Install Dependencies</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-create-dataset">Load and Create Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-using-ordinalencoder">Encoding using OrdinalEncoder</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-training-and-testing-sets">Create Training and Testing Sets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-train-model">Create and Train Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-convolutional-neural-network-use-when-converting-to-pytorch">Create Convolutional Neural Network (use when converting to PyTorch)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-training-set-use-when-converting-to-pytorch">Load Training Set (use when converting to PyTorch)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-data-use-when-converting-to-pytorch">Train Data (use when converting to PyTorch)</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="install-dependencies">
+<h1>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (1.4.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from pandas) (2022.1)
+Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from pandas) (1.23.1)
+Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install matplotlib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (3.5.2)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (4.34.4)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (1.4.4)
+Requirement already satisfied: numpy&gt;=1.17 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (1.23.1)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (21.3)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (9.2.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="import-libraries">
+<h1>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-and-create-dataset">
+<h1>Load and Create Dataset<a class="headerlink" href="#load-and-create-dataset" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="n">csv_file</span> <span class="o">=</span> <span class="s2">&quot;Formatted_ETAS_Output.csv&quot;</span>
+
+<span class="c1"># Read the CSV file using Pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># # Access the data in the DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">csv_file</span> <span class="o">=</span> <span class="s2">&quot;Formatted_ETAS_Output.csv&quot;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_stats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary_stats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Date        Time          Year            X             Y  \
+count     32001       32001  32001.000000  32001.00000  32001.000000   
+unique    19127       26803           NaN          NaN           NaN   
+top     4/26/64  0:31:11.00           NaN          NaN           NaN   
+freq         10           5           NaN          NaN           NaN   
+mean        NaN         NaN   1991.924790   -117.54676     34.810868   
+std         NaN         NaN     18.407271      2.11036      2.388448   
+min         NaN         NaN   1960.002196   -123.48700     29.080400   
+25%         NaN         NaN   1975.851679   -118.73330     33.343000   
+50%         NaN         NaN   1992.311728   -117.20600     34.587100   
+75%         NaN         NaN   2007.784510   -116.10520     36.820000   
+max         NaN         NaN   2023.487118   -113.24630     39.475100   
+
+           Magnitude           Z\r  
+count   32001.000000  32001.000000  
+unique           NaN           NaN  
+top              NaN           NaN  
+freq             NaN           NaN  
+mean        3.452693      9.615045  
+std         0.460765      6.170866  
+min         3.000000      0.000000  
+25%         3.130000      4.236500  
+50%         3.310000      9.076000  
+75%         3.630000     15.139700  
+max         7.650000     20.000000  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Earthquake Magnitude over Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Magnitude Histogram&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># Adjust the size (s) of the points as per your preference</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Earthquake Coordinates&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d049fcb3a784edaa3051708e8a8c9fa4ab05594f7b49c14aa09ee33c48450845.png" src="_images/d049fcb3a784edaa3051708e8a8c9fa4ab05594f7b49c14aa09ee33c48450845.png" />
+<img alt="_images/c46910a588d60c8657e6aee1701777d021fd3382093808ea07517a833402e8dc.png" src="_images/c46910a588d60c8657e6aee1701777d021fd3382093808ea07517a833402e8dc.png" />
+<img alt="_images/e5cdc1217ea799a455dd1c8bb807b73707d4711264887a592b173b9f6da7215c.png" src="_images/e5cdc1217ea799a455dd1c8bb807b73707d4711264887a592b173b9f6da7215c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Convert &quot;Date&quot; column to datetime in the new DataFrame</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%y&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adjust two-digit year values to four-digit format in the new DataFrame</span>
+<span class="n">new_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">-=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Extract components from the &quot;Date&quot; column in the new DataFrame</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Day&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Month&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;DayOfWeek&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Quarter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">quarter</span>
+
+<span class="c1"># Convert &quot;Time&quot; column to datetime in the new DataFrame</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Extract time components in the new DataFrame</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Hour&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Minute&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">minute</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Second&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">second</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Millisecond&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">microsecond</span> <span class="o">//</span> <span class="mi">1000</span>
+
+<span class="c1"># Drop the original &quot;Time&quot; column from the new DataFrame</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Drop the &quot;Date&quot; column from the new DataFrame</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">new_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-9b51f051-cab3-4089-94b2-4ae380faf525">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Magnitude</th>
+      <th>Z\r</th>
+      <th>Day</th>
+      <th>Month</th>
+      <th>DayOfWeek</th>
+      <th>Quarter</th>
+      <th>Hour</th>
+      <th>Minute</th>
+      <th>Second</th>
+      <th>Millisecond</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1959</td>
+      <td>-119.0502</td>
+      <td>33.9790</td>
+      <td>6.50</td>
+      <td>8.2474</td>
+      <td>31</td>
+      <td>12</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1960</td>
+      <td>-115.6222</td>
+      <td>33.0793</td>
+      <td>4.25</td>
+      <td>7.9322</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>8</td>
+      <td>49</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1960</td>
+      <td>-115.6323</td>
+      <td>33.1220</td>
+      <td>3.03</td>
+      <td>8.4015</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>10</td>
+      <td>31</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1960</td>
+      <td>-115.5851</td>
+      <td>33.0745</td>
+      <td>3.03</td>
+      <td>7.9678</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>10</td>
+      <td>32</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1960</td>
+      <td>-115.6256</td>
+      <td>33.0290</td>
+      <td>3.08</td>
+      <td>7.9737</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>11</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9b51f051-cab3-4089-94b2-4ae380faf525')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-9b51f051-cab3-4089-94b2-4ae380faf525 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-9b51f051-cab3-4089-94b2-4ae380faf525');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="encoding-using-ordinalencoder">
+<h1>Encoding using OrdinalEncoder<a class="headerlink" href="#encoding-using-ordinalencoder" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OrdinalEncoder</span>
+
+<span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Minor&quot;</span><span class="p">,</span> <span class="s2">&quot;Light&quot;</span><span class="p">,</span> <span class="s2">&quot;Moderate&quot;</span><span class="p">,</span> <span class="s2">&quot;Strong&quot;</span><span class="p">,</span> <span class="s2">&quot;Major&quot;</span><span class="p">,</span> <span class="s2">&quot;Great&quot;</span><span class="p">]</span>
+
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Strength&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Extract the &quot;category&quot; column as a 2D array</span>
+<span class="n">Strength</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[[</span><span class="s2">&quot;Strength&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Create an instance of the OrdinalEncoder</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">OrdinalEncoder</span><span class="p">()</span>
+
+<span class="c1"># Fit and transform the categories</span>
+<span class="n">Encoded_Strength</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Strength</span><span class="p">)</span>
+
+<span class="c1"># Add the encoded categories to the DataFrame</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Encoded_Strength&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Encoded_Strength</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">new_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Year         X        Y  Magnitude      Z\r  Day  Month  DayOfWeek  \
+0      1959 -119.0502  33.9790       6.50   8.2474   31     12          3   
+1      1960 -115.6222  33.0793       4.25   7.9322    2      1          5   
+2      1960 -115.6323  33.1220       3.03   8.4015    2      1          5   
+3      1960 -115.5851  33.0745       3.03   7.9678    2      1          5   
+4      1960 -115.6256  33.0290       3.08   7.9737    2      1          5   
+...     ...       ...      ...        ...      ...  ...    ...        ...   
+31996  2023 -116.5198  34.4758       3.55  18.5553   24      6          5   
+31997  2023 -120.5137  35.9443       3.20  18.9807   24      6          5   
+31998  2023 -114.1410  30.0220       3.43  18.6407   24      6          5   
+31999  2023 -116.3940  34.1200       5.21  18.2065   26      6          0   
+32000  2023 -122.7768  38.7895       3.57  17.1314   26      6          0   
+
+       Quarter  Hour  Minute  Second  Millisecond  Strength  Encoded_Strength  
+0            4     0       3       9            0    Strong               4.0  
+1            1     0       8      49            0     Light               0.0  
+2            1     0      10      31            0     Minor               2.0  
+3            1     0      10      32            0     Minor               2.0  
+4            1     0      11       7            0     Minor               2.0  
+...        ...   ...     ...     ...          ...       ...               ...  
+31996        2    11      31      22            0     Minor               2.0  
+31997        2    11      32      21            0     Minor               2.0  
+31998        2    11      33      56            0     Minor               2.0  
+31999        2    11      39      36            0  Moderate               3.0  
+32000        2    11      41      26            0     Minor               2.0  
+
+[32001 rows x 15 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Double the encode</span>
+<span class="c1">#Use one hot encoder for the Strength</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-213a26dd-162a-48ba-ad01-b8da9e4896b3">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Magnitude</th>
+      <th>Z\r</th>
+      <th>Day</th>
+      <th>Month</th>
+      <th>DayOfWeek</th>
+      <th>Quarter</th>
+      <th>Hour</th>
+      <th>Minute</th>
+      <th>Second</th>
+      <th>Millisecond</th>
+      <th>Strength</th>
+      <th>Encoded_Strength</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1959</td>
+      <td>-119.0502</td>
+      <td>33.9790</td>
+      <td>650.0</td>
+      <td>8.2474</td>
+      <td>31</td>
+      <td>12</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>9</td>
+      <td>0</td>
+      <td>Strong</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1960</td>
+      <td>-115.6222</td>
+      <td>33.0793</td>
+      <td>425.0</td>
+      <td>7.9322</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>8</td>
+      <td>49</td>
+      <td>0</td>
+      <td>Light</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1960</td>
+      <td>-115.6323</td>
+      <td>33.1220</td>
+      <td>303.0</td>
+      <td>8.4015</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>10</td>
+      <td>31</td>
+      <td>0</td>
+      <td>Minor</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1960</td>
+      <td>-115.5851</td>
+      <td>33.0745</td>
+      <td>303.0</td>
+      <td>7.9678</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>10</td>
+      <td>32</td>
+      <td>0</td>
+      <td>Minor</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1960</td>
+      <td>-115.6256</td>
+      <td>33.0290</td>
+      <td>308.0</td>
+      <td>7.9737</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>11</td>
+      <td>7</td>
+      <td>0</td>
+      <td>Minor</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-213a26dd-162a-48ba-ad01-b8da9e4896b3')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-213a26dd-162a-48ba-ad01-b8da9e4896b3 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-213a26dd-162a-48ba-ad01-b8da9e4896b3');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoded_strength_range</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Encoded_Strength&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[[</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">encoded_strength_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>min    0.0
+max    4.0
+Name: Encoded_Strength, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_stats</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary_stats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Year            X             Y     Magnitude           Z\r  \
+count   32001.000000  32001.00000  32001.000000  32001.000000  32001.000000   
+unique           NaN          NaN           NaN           NaN           NaN   
+top              NaN          NaN           NaN           NaN           NaN   
+freq             NaN          NaN           NaN           NaN           NaN   
+mean     1991.422987   -117.54676     34.810868    345.269335      9.615045   
+std        18.406353      2.11036      2.388448     46.076527      6.170866   
+min      1959.000000   -123.48700     29.080400    300.000000      0.000000   
+25%      1975.000000   -118.73330     33.343000    313.000000      4.236500   
+50%      1992.000000   -117.20600     34.587100    331.000000      9.076000   
+75%      2007.000000   -116.10520     36.820000    363.000000     15.139700   
+max      2023.000000   -113.24630     39.475100    765.000000     20.000000   
+
+                 Day         Month     DayOfWeek       Quarter          Hour  \
+count   32001.000000  32001.000000  32001.000000  32001.000000  32001.000000   
+unique           NaN           NaN           NaN           NaN           NaN   
+top              NaN           NaN           NaN           NaN           NaN   
+freq             NaN           NaN           NaN           NaN           NaN   
+mean       15.722540      6.512046      3.010437      2.505640     11.475141   
+std         8.783883      3.437430      1.991078      1.111548      6.900558   
+min         1.000000      1.000000      0.000000      1.000000      0.000000   
+25%         8.000000      4.000000      1.000000      2.000000      6.000000   
+50%        16.000000      7.000000      3.000000      3.000000     11.000000   
+75%        23.000000      9.000000      5.000000      3.000000     17.000000   
+max        31.000000     12.000000      6.000000      4.000000     23.000000   
+
+              Minute        Second  Millisecond Strength  Encoded_Strength  
+count   32001.000000  32001.000000      32001.0    32001      32001.000000  
+unique           NaN           NaN          NaN        5               NaN  
+top              NaN           NaN          NaN    Minor               NaN  
+freq             NaN           NaN          NaN    28384               NaN  
+mean       29.450048     29.354583          0.0      NaN          1.815818  
+std        17.348968     17.252479          0.0      NaN          0.617465  
+min         0.000000      0.000000          0.0      NaN          0.000000  
+25%        14.000000     14.000000          0.0      NaN          2.000000  
+50%        30.000000     29.000000          0.0      NaN          2.000000  
+75%        44.000000     44.000000          0.0      NaN          2.000000  
+max        59.000000     59.000000          0.0      NaN          4.000000  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="create-training-and-testing-sets">
+<h1>Create Training and Testing Sets<a class="headerlink" href="#create-training-and-testing-sets" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">]</span>  <span class="c1"># Target variable</span>
+
+<span class="c1">#temporarily drop column of Strength values represented as strings (Encoded_Strength still included though)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Strength&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Split the data into training and testing sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Year         X        Y      Z\r  Day  Month  DayOfWeek  Quarter  Hour  \
+31932  2023 -116.3290  31.9490  18.8422   19      5          4        2     9   
+31187  2021 -118.1857  38.1148   4.7292   11     11          3        4    20   
+14148  1988 -117.5088  35.7325   1.6788   19      7          1        3    13   
+23611  2007 -116.2980  33.9380  18.8762   26      2          0        1     3   
+23500  2006 -118.1278  34.5486  14.6323   12     12          1        4    22   
+...     ...       ...      ...      ...  ...    ...        ...      ...   ...   
+29802  2019 -114.2620  30.3950   8.9847    1      3          4        1     3   
+5390   1970 -116.5115  33.9353   9.2916   14      7          1        3    12   
+860    1961 -118.3985  33.4376  19.8147   19     11          6        4    21   
+15795  1991 -116.0270  37.0100  18.5641    6     11          2        4    20   
+23654  2007 -121.6790  37.3120  19.3746    1      4          6        2     5   
+
+       Minute  Second  Millisecond  Encoded_Strength  
+31932       9      15            0               2.0  
+31187      43      48            0               0.0  
+14148      12      14            0               0.0  
+23611      47       3            0               2.0  
+23500      47      34            0               2.0  
+...       ...     ...          ...               ...  
+29802      59      15            0               2.0  
+5390       53      12            0               2.0  
+860        14      56            0               2.0  
+15795      23      44            0               2.0  
+23654      59      47            0               3.0  
+
+[22400 rows x 13 columns]
+31932    321.0
+31187    440.0
+14148    423.0
+23611    307.0
+23500    351.0
+         ...  
+29802    324.0
+5390     305.0
+860      314.0
+15795    329.0
+23654    513.0
+Name: Magnitude, Length: 22400, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="create-and-train-model">
+<h1>Create and Train Model<a class="headerlink" href="#create-and-train-model" title="Permalink to this heading">#</a></h1>
+<p>Note:</p>
+<ul class="simple">
+<li><p>This may take several minutes</p></li>
+<li><p>This is a temporary model that is a Multi Layered Perceptron. We plan to switch to a Convolutional Neural Network soon.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPRegressor</span>
+
+
+<span class="c1">#Notes for Hyperparameter tuning: increase max iters to much larger number. Test learning rate. Experiment with Batch size</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">MLPRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">train_acc</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">val_acc</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CNN training set accuracy = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_acc</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CNN validation set accuracy = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_acc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CNN training set accuracy = 0.63815051226697
+CNN validation set accuracy = 0.6524063836696402
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="create-convolutional-neural-network-use-when-converting-to-pytorch">
+<h1>Create Convolutional Neural Network (use when converting to PyTorch)<a class="headerlink" href="#create-convolutional-neural-network-use-when-converting-to-pytorch" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># #Build a Convoluted Neural Network</span>
+
+<span class="c1"># class SurrogateCNN(nn.Module):</span>
+<span class="c1">#     def __init__(self):</span>
+<span class="c1">#         super(SurrogateCNN, self).__init__()</span>
+
+<span class="c1">#         # Convolutional layers</span>
+<span class="c1">#         self.conv1 = nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1)</span>
+<span class="c1">#         self.relu1 = nn.ReLU()</span>
+<span class="c1">#         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)</span>
+
+<span class="c1">#         self.conv2 = nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1)</span>
+<span class="c1">#         self.relu2 = nn.ReLU()</span>
+<span class="c1">#         self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)</span>
+
+<span class="c1">#         # Fully connected layers</span>
+<span class="c1">#         self.flatten = nn.Flatten()</span>
+<span class="c1">#         self.fc1 = nn.Linear(32 * 8 * 8, 128)</span>
+<span class="c1">#         self.relu3 = nn.ReLU()</span>
+<span class="c1">#         self.fc2 = nn.Linear(128, 10)  # Adjust the number of output classes as needed</span>
+
+<span class="c1">#     def forward(self, x):</span>
+<span class="c1">#         x = self.pool1(self.relu1(self.conv1(x)))</span>
+<span class="c1">#         x = self.pool2(self.relu2(self.conv2(x)))</span>
+<span class="c1">#         x = self.flatten(x)</span>
+<span class="c1">#         x = self.relu3(self.fc1(x))</span>
+<span class="c1">#         x = self.fc2(x)</span>
+<span class="c1">#         return x</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-training-set-use-when-converting-to-pytorch">
+<h1>Load Training Set (use when converting to PyTorch)<a class="headerlink" href="#load-training-set-use-when-converting-to-pytorch" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from torch.utils.data import Dataset, DataLoader</span>
+<span class="c1"># import pandas as pd</span>
+
+
+<span class="c1"># #Change to fit our dataset</span>
+
+<span class="c1"># # Read data, convert to NumPy arrays</span>
+<span class="c1"># data = pd.read_csv(&quot;sonar.csv&quot;, header=None)</span>
+<span class="c1"># X = data.iloc[:, 0:60].values</span>
+<span class="c1"># y = data.iloc[:, 60].values</span>
+
+
+<span class="c1"># # convert into PyTorch tensors</span>
+<span class="c1"># X = torch.tensor(X, dtype=torch.float32)</span>
+<span class="c1"># y = torch.tensor(y, dtype=torch.float32).reshape(-1, 1)</span>
+
+<span class="c1"># # create DataLoader, then take one batch</span>
+<span class="c1"># loader = DataLoader(list(zip(X,y)), shuffle=True, batch_size=16)</span>
+<span class="c1"># for X_batch, y_batch in loader:</span>
+<span class="c1">#     print(X_batch, y_batch)</span>
+<span class="c1">#     break</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="train-data-use-when-converting-to-pytorch">
+<h1>Train Data (use when converting to PyTorch)<a class="headerlink" href="#train-data-use-when-converting-to-pytorch" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import torch.optim as optim</span>
+
+<span class="c1"># # Instantiate the SurrogateCNN model</span>
+<span class="c1"># model = SurrogateCNN()</span>
+
+<span class="c1"># # Define the loss function</span>
+<span class="c1"># criterion = nn.CrossEntropyLoss()</span>
+
+<span class="c1"># # Define the optimizer</span>
+<span class="c1"># optimizer = optim.Adam(model.parameters(), lr=0.001)</span>
+
+<span class="c1"># # Prepare your training data</span>
+<span class="c1"># train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)</span>
+
+<span class="c1"># # Set the number of training epochs</span>
+<span class="c1"># num_epochs = 10</span>
+
+<span class="c1"># # Training loop</span>
+<span class="c1"># for epoch in range(num_epochs):</span>
+<span class="c1">#     running_loss = 0.0</span>
+
+<span class="c1">#     for inputs, labels in train_loader:</span>
+<span class="c1">#         # Zero the gradients</span>
+<span class="c1">#         optimizer.zero_grad()</span>
+
+<span class="c1">#         # Forward pass</span>
+<span class="c1">#         outputs = model(inputs)</span>
+
+<span class="c1">#         # Compute the loss</span>
+<span class="c1">#         loss = criterion(outputs, labels)</span>
+
+<span class="c1">#         # Backward pass and optimization</span>
+<span class="c1">#         loss.backward()</span>
+<span class="c1">#         optimizer.step()</span>
+
+<span class="c1">#         # Update the running loss</span>
+<span class="c1">#         running_loss += loss.item()</span>
+
+<span class="c1">#     # Print the average loss for the epoch</span>
+<span class="c1">#     epoch_loss = running_loss / len(train_loader)</span>
+<span class="c1">#     print(f&quot;Epoch {epoch+1}/{num_epochs} - Loss: {epoch_loss:.4f}&quot;)</span>
+
+<span class="c1"># # Save the trained model</span>
+<span class="c1"># torch.save(model.state_dict(), &quot;surrogate_cnn_model.pth&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-13-5ac56a40d0fe&gt;</span> in <span class="ni">&lt;cell line: 13&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Prepare your training data</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> 
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Set the number of training epochs</span>
+
+<span class="ne">NameError</span>: name &#39;train_dataset&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Install Dependencies</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-create-dataset">Load and Create Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-using-ordinalencoder">Encoding using OrdinalEncoder</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-training-and-testing-sets">Create Training and Testing Sets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-train-model">Create and Train Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-convolutional-neural-network-use-when-converting-to-pytorch">Create Convolutional Neural Network (use when converting to PyTorch)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-training-set-use-when-converting-to-pytorch">Load Training Set (use when converting to PyTorch)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-data-use-when-converting-to-pytorch">Train Data (use when converting to PyTorch)</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vishal Kamalakrishnan, Zach Russell, Kevin Ma, and Justin Zheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
