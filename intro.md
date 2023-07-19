@@ -5,4 +5,3 @@ code by John Rundle and the team at UC Davis (more info on ETAS... & `` {cite}`e
 neural network (more info about the model...). Using our model we conducted  ... 
 
 ```{tableofcontents}
-```

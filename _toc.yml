@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: proposal
 - file: data_visualization
 - file: notebooks
 - file: markdown-notebooks
