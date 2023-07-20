@@ -7,5 +7,6 @@ chapters:
 - file: proposal
 - file: data_visualization
 - file: earthquake_surrogate
+- file: keras_classifier
 #- file: notebooks
 #- file: markdown-notebooks
