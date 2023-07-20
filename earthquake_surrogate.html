@@ -64,8 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'earthquake_surrogate';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Research Proposal" href="proposal.html" />
+    <link rel="prev" title="Input Data and Graphs" href="data_visualization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,9 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="proposal.html">Research Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_visualization.html">Input Data and Graphs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Earthquake Surrogate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -359,51 +357,6 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="earthquake-surrogate">
 <h1>Earthquake Surrogate<a class="headerlink" href="#earthquake-surrogate" title="Permalink to this heading">#</a></h1>
 <p>#Install Dependencies</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pandas
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (1.4.3)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from pandas) (2022.1)
-Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from pandas) (1.23.1)
-Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 23.1.2 -&gt; 23.2
-[notice] To update, run: python.exe -m pip install --upgrade pip
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install matplotlib
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (3.5.2)
-Requirement already satisfied: cycler&gt;=0.10 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (0.11.0)
-Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (4.34.4)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (1.4.4)
-Requirement already satisfied: numpy&gt;=1.17 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (1.23.1)
-Requirement already satisfied: packaging&gt;=20.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (21.3)
-Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (9.2.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (3.0.9)
-Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from matplotlib) (2.8.2)
-Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\programs\python\python310\lib\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 23.1.2 -&gt; 23.2
-[notice] To update, run: python.exe -m pip install --upgrade pip
-</pre></div>
-</div>
-</div>
-</div>
 <p>#Import Libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -435,7 +388,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\prog
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">csv_file</span> <span class="o">=</span> <span class="s2">&quot;Formatted_ETAS_Output.csv&quot;</span>
@@ -448,43 +401,38 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\prog
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_stats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Earthquake Magnitude over Time&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Magnitude Histogram&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># Adjust the size (s) of the points as per your preference</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Earthquake Coordinates&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary_stats</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d049fcb3a784edaa3051708e8a8c9fa4ab05594f7b49c14aa09ee33c48450845.png" src="_images/d049fcb3a784edaa3051708e8a8c9fa4ab05594f7b49c14aa09ee33c48450845.png" />
-<img alt="_images/c46910a588d60c8657e6aee1701777d021fd3382093808ea07517a833402e8dc.png" src="_images/c46910a588d60c8657e6aee1701777d021fd3382093808ea07517a833402e8dc.png" />
-<img alt="_images/e5cdc1217ea799a455dd1c8bb807b73707d4711264887a592b173b9f6da7215c.png" src="_images/e5cdc1217ea799a455dd1c8bb807b73707d4711264887a592b173b9f6da7215c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Date        Time          Year            X             Y  \
+count     32001       32001  32001.000000  32001.00000  32001.000000   
+unique    19127       26803           NaN          NaN           NaN   
+top     4/26/64  0:31:11.00           NaN          NaN           NaN   
+freq         10           5           NaN          NaN           NaN   
+mean        NaN         NaN   1991.924790   -117.54676     34.810868   
+std         NaN         NaN     18.407271      2.11036      2.388448   
+min         NaN         NaN   1960.002196   -123.48700     29.080400   
+25%         NaN         NaN   1975.851679   -118.73330     33.343000   
+50%         NaN         NaN   1992.311728   -117.20600     34.587100   
+75%         NaN         NaN   2007.784510   -116.10520     36.820000   
+max         NaN         NaN   2023.487118   -113.24630     39.475100   
+
+           Magnitude           Z\r  
+count   32001.000000  32001.000000  
+unique           NaN           NaN  
+top              NaN           NaN  
+freq             NaN           NaN  
+mean        3.452693      9.615045  
+std         0.460765      6.170866  
+min         3.000000      0.000000  
+25%         3.130000      4.236500  
+50%         3.310000      9.076000  
+75%         3.630000     15.139700  
+max         7.650000     20.000000  
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -527,7 +475,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\prog
 <div class="cell_output docutils container">
 <div class="output text_html">
 
-  <div id="df-64405d2a-ad2a-4f4f-8dc5-93861c92c521">
+  <div id="df-c17c4358-6852-42b1-b80b-b3ef72a7d178">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -640,7 +588,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\prog
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-64405d2a-ad2a-4f4f-8dc5-93861c92c521')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c17c4358-6852-42b1-b80b-b3ef72a7d178')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -653,8 +601,8 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\prog
 
 
 
-    <div id="df-0a3630df-1c37-495b-ae17-6658071d7834">
-      <button class="colab-df-quickchart" onclick="quickchart('df-0a3630df-1c37-495b-ae17-6658071d7834')"
+    <div id="df-4076f9c9-2252-48e6-9247-82415200ed09">
+      <button class="colab-df-quickchart" onclick="quickchart('df-4076f9c9-2252-48e6-9247-82415200ed09')"
               title="Suggest charts."
               style="display:none;">
 
@@ -711,7 +659,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\vishal\appdata\local\prog
 
 function displayQuickchartButton(domScope) {
   let quickchartButtonEl =
-    domScope.querySelector('#df-0a3630df-1c37-495b-ae17-6658071d7834 button.colab-df-quickchart');
+    domScope.querySelector('#df-4076f9c9-2252-48e6-9247-82415200ed09 button.colab-df-quickchart');
   quickchartButtonEl.style.display =
     google.colab.kernel.accessAllowed ? 'block' : 'none';
 }
@@ -758,12 +706,12 @@ function displayQuickchartButton(domScope) {
 
       <script>
         const buttonEl =
-          document.querySelector('#df-64405d2a-ad2a-4f4f-8dc5-93861c92c521 button.colab-df-convert');
+          document.querySelector('#df-c17c4358-6852-42b1-b80b-b3ef72a7d178 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-64405d2a-ad2a-4f4f-8dc5-93861c92c521');
+          const element = document.querySelector('#df-c17c4358-6852-42b1-b80b-b3ef72a7d178');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -789,62 +737,49 @@ function displayQuickchartButton(domScope) {
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
-
 <span class="n">X</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Features</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">]</span>  <span class="c1"># Target variable</span>
 
-<span class="c1"># scaler = StandardScaler()</span>
+<span class="c1"># Create a StandardScaler object</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
-<span class="c1"># X = scaler.fit_transform(X)</span>
+<span class="c1"># Scale the features</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
+<span class="c1"># Split the scaled data into training and testing sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
-<span class="c1"># Split the data into training and testing sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># scaler = StandardScaler()</span>
-<span class="c1"># X_scaled_train = scaler.fit_transform(X_train)</span>
-<span class="c1"># X_scaled_test = scaler.fit_transform(X_test)</span>
-
-
-
+<span class="c1"># Print the data to verify the changes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scaled X_train:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_train:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scaled X_test:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_test:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              X        Y      Z\r  Day  Month  DayOfWeek  Quarter  Hour  \
-31932 -116.3290  31.9490  18.8422   19      5          4        2     9   
-31187 -118.1857  38.1148   4.7292   11     11          3        4    20   
-14148 -117.5088  35.7325   1.6788   19      7          1        3    13   
-23611 -116.2980  33.9380  18.8762   26      2          0        1     3   
-23500 -118.1278  34.5486  14.6323   12     12          1        4    22   
-...         ...      ...      ...  ...    ...        ...      ...   ...   
-29802 -114.2620  30.3950   8.9847    1      3          4        1     3   
-5390  -116.5115  33.9353   9.2916   14      7          1        3    12   
-860   -118.3985  33.4376  19.8147   19     11          6        4    21   
-15795 -116.0270  37.0100  18.5641    6     11          2        4    20   
-23654 -121.6790  37.3120  19.3746    1      4          6        2     5   
-
-       Minute  Second  Millisecond  
-31932       9      15            0  
-31187      43      48            0  
-14148      12      14            0  
-23611      47       3            0  
-23500      47      34            0  
-...       ...     ...          ...  
-29802      59      15            0  
-5390       53      12            0  
-860        14      56            0  
-15795      23      44            0  
-23654      59      47            0  
-
-[22400 rows x 11 columns]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scaled X_train:
+[[ 0.57704818 -1.19823102  1.49530055 ... -1.17876566 -0.83204313
+   0.        ]
+ [-0.30276807  1.3833182  -0.79177252 ...  0.78103568  1.0807553
+   0.        ]
+ [ 0.01798791  0.38587671 -1.28610312 ... -1.00584201 -0.89000671
+   0.        ]
+ ...
+ [-0.40360552 -0.5749714   1.65289841 ... -0.89055958  1.54446401
+   0.        ]
+ [ 0.72015396  0.9207512   1.45023324 ... -0.37178863  0.84890095
+   0.        ]
+ [-1.95810392  1.04719511  1.58157829 ...  1.70329514  1.02279171
+   0.        ]]
+y_train:
 31932    3.21
 31187    4.40
 14148    4.23
@@ -857,33 +792,21 @@ function displayQuickchartButton(domScope) {
 15795    3.29
 23654    5.13
 Name: Magnitude, Length: 22400, dtype: float64
-              X        Y      Z\r  Day  Month  DayOfWeek  Quarter  Hour  \
-23100 -115.3318  32.3288  18.5062   11      2          5        1     2   
-17362 -117.6355  36.4900  10.4344    2     12          4        4    22   
-8993  -118.1554  38.2291   1.2431    6     10          3        4    18   
-19566 -120.0683  36.0333   3.4478   22      1          4        1     1   
-3798  -116.6385  33.7264   0.4860    8      6          3        2    10   
-...         ...      ...      ...  ...    ...        ...      ...   ...   
-1943  -121.1027  36.5578   4.7618   15      2          5        1     3   
-29579 -115.8174  32.8658  16.8723    9      9          6        3    16   
-5955  -119.9570  34.9426  13.0235    2      9          3        3    16   
-18112 -117.5888  35.6010   9.5120   30      4          1        2     7   
-13274 -117.8017  38.1782   9.5803   25      9          3        3    17   
-
-       Minute  Second  Millisecond  
-23100      46      50            0  
-17362       6      22            0  
-8993       21      51            0  
-19566      29      16            0  
-3798       30       9            0  
-...       ...     ...          ...  
-1943        4       7            0  
-29579      34      52            0  
-5955        7       1            0  
-18112      57      12            0  
-13274      37      48            0  
-
-[9601 rows x 11 columns]
+Scaled X_test:
+[[ 1.04958158 -1.03921315  1.44085029 ...  0.95395933  1.19668248
+   0.        ]
+ [-0.04205018  0.70303321  0.13277997 ... -1.3516893  -0.426298
+   0.        ]
+ [-0.2884101   1.43117429 -1.3567102  ... -0.48707107  1.25464607
+   0.        ]
+ ...
+ [-1.14211665  0.05515471  0.55235489 ... -1.29404809 -1.64353337
+   0.        ]
+ [-0.01992091  0.33081918 -0.01669897 ...  1.5880127  -1.00593389
+   0.        ]
+ [-0.12080575  1.40986305 -0.00563065 ...  0.43518839  1.0807553
+   0.        ]]
+y_test:
 23100    3.02
 17362    3.26
 8993     3.26
@@ -934,28 +857,100 @@ Name: Magnitude, Length: 9601, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_score</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGB Regressor R^2:&quot;</span><span class="p">,</span> <span class="n">val_score</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
+<span class="n">val_score_xgb</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGB Regressor R^2:&quot;</span><span class="p">,</span> <span class="n">val_score_xgb</span><span class="p">)</span>
 
 <span class="n">predicted</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGB Regressor MAE:&quot;</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
-<span class="n">mean_squared_score</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGB Regressor MSE:&quot;</span><span class="p">,</span> <span class="n">mean_squared_score</span><span class="p">)</span>
+<span class="n">MAE_xgb</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGB Regressor MAE:&quot;</span><span class="p">,</span> <span class="n">MAE_xgb</span><span class="p">)</span>
+
+<span class="n">mean_squared_score_xgb</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGB Regressor MSE:&quot;</span><span class="p">,</span> <span class="n">mean_squared_score_xgb</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XGB Regressor R^2: -0.07805805914027886
-XGB Regressor MAE: 0.352417946920682
-XGB Regressor MSE: 0.23101622626237914
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XGB Regressor R^2: -0.07775879866078106
+XGB Regressor MAE: 0.35240284276075656
+XGB Regressor MSE: 0.23095209796608107
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;XGB Regressor - Actual vs. Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/de9a0ca6c00c56ca3dde0bd1e900b17c86c98e66dea3b94b11aa6c1fb73b621d.png" src="_images/de9a0ca6c00c56ca3dde0bd1e900b17c86c98e66dea3b94b11aa6c1fb73b621d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Convert X_test to a DataFrame</span>
+<span class="n">X_test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Get the feature importances</span>
+<span class="n">feature_importance</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">feature_importances_</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_test_df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Create a DataFrame to store the feature importances</span>
+<span class="n">feature_importance_df_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Feature&#39;</span><span class="p">:</span> <span class="n">feature_names</span><span class="p">,</span> <span class="s1">&#39;Importance&#39;</span><span class="p">:</span> <span class="n">feature_importance</span><span class="p">})</span>
+
+<span class="c1"># Sort the features by importance in descending order</span>
+<span class="n">feature_importance_df_1</span> <span class="o">=</span> <span class="n">feature_importance_df_1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Importance&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relative Influence of Features:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature_importance_df_1</span><span class="p">)</span>
+
+<span class="c1"># Plot the feature importances in a bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">feature_importance_df_1</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">feature_importance_df_1</span><span class="p">[</span><span class="s1">&#39;Importance&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Features&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Importance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Importances&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative Influence of Features:
+        Feature  Importance
+2           Z\r    0.126057
+1             Y    0.123776
+7          Hour    0.112574
+8        Minute    0.111738
+4         Month    0.110232
+0             X    0.108772
+3           Day    0.107846
+9        Second    0.103845
+5     DayOfWeek    0.095160
+6       Quarter    0.000000
+10  Millisecond    0.000000
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/IPython/core/pylabtools.py:151: UserWarning: Glyph 13 (
+) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="_images/5f388e73ce31946e98b5fbe62a6a02d8e504bf465c983a1ecaba6bbd58c123e0.png" src="_images/5f388e73ce31946e98b5fbe62a6a02d8e504bf465c983a1ecaba6bbd58c123e0.png" />
 </div>
 </div>
 <p>#Support Vector Regression</p>
@@ -974,27 +969,44 @@ XGB Regressor MSE: 0.23101622626237914
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r2</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SVR R^2:&quot;</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+
+<span class="n">r2_svr</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SVR R^2:&quot;</span><span class="p">,</span> <span class="n">r2_svr</span><span class="p">)</span>
 
 <span class="n">predicted</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="n">MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SVR MAE:&quot;</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
-<span class="n">mean_squared_score</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SVR MSE:&quot;</span><span class="p">,</span> <span class="n">mean_squared_score</span><span class="p">)</span>
+<span class="n">MAE_svr</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SVR MAE:&quot;</span><span class="p">,</span> <span class="n">MAE_svr</span><span class="p">)</span>
+<span class="n">mean_squared_score_svr</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SVR MSE:&quot;</span><span class="p">,</span> <span class="n">mean_squared_score_svr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVR R^2: -0.03676225623642626
-SVR MAE: 0.32002706358927097
-SVR MSE: 0.22216698065223922
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVR R^2: -0.04471690218943092
+SVR MAE: 0.32356238860537534
+SVR MSE: 0.22387157557060747
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;SVR - Actual vs. Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f190a01a7cecb3c738330ceed38128b72d4769fa5c39040da6c41a9974a70bcd.png" src="_images/f190a01a7cecb3c738330ceed38128b72d4769fa5c39040da6c41a9974a70bcd.png" />
 </div>
 </div>
 <p>#MLP Regressor</p>
@@ -1009,26 +1021,43 @@ SVR MSE: 0.22216698065223922
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLP_R2</span> <span class="o">=</span> <span class="n">smlp</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MLP Regressor R^2:&quot;</span><span class="p">,</span> <span class="n">MLP_R2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="n">R2_mlp</span> <span class="o">=</span> <span class="n">smlp</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MLP Regressor R^2:&quot;</span><span class="p">,</span> <span class="n">R2_mlp</span><span class="p">)</span>
 
 <span class="n">predicted</span> <span class="o">=</span> <span class="n">smlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="n">MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MLP Regressor MAE:&quot;</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
-<span class="n">mean_squared_score</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MLP Regressor MSE:&quot;</span><span class="p">,</span> <span class="n">mean_squared_score</span><span class="p">)</span>
+<span class="n">MAE_mlp</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MLP Regressor MAE:&quot;</span><span class="p">,</span> <span class="n">MAE_mlp</span><span class="p">)</span>
+<span class="n">mean_squared_score_mlp</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MLP Regressor MSE:&quot;</span><span class="p">,</span> <span class="n">mean_squared_score_mlp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLP Regressor R^2: -0.0183904806384525
-MLP Regressor MAE: 0.35452631307729565
-MLP Regressor MSE: 0.21823010709297308
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLP Regressor R^2: -0.03192446360480883
+MLP Regressor MAE: 0.3442370646897079
+MLP Regressor MSE: 0.22113029381731364
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MLP Regressor - Actual vs. Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/20664a889a5248f1b916fa3e261e60ebb268ae47402f094fd038147037076160.png" src="_images/20664a889a5248f1b916fa3e261e60ebb268ae47402f094fd038147037076160.png" />
 </div>
 </div>
 <p>#Linear Regression</p>
@@ -1043,17 +1072,18 @@ MLP Regressor MSE: 0.21823010709297308
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_acc</span> <span class="o">=</span> <span class="n">clf_1</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Regression R^2:&quot;</span><span class="p">,</span> <span class="n">val_acc</span><span class="p">)</span>
+<span class="n">val_acc_ln</span> <span class="o">=</span> <span class="n">clf_1</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Regression R^2:&quot;</span><span class="p">,</span> <span class="n">val_acc_ln</span><span class="p">)</span>
+
 
 <span class="n">predicted</span> <span class="o">=</span> <span class="n">clf_1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Regression MAE:&quot;</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
-<span class="n">mean_squared_score</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Regression MSE&quot;</span><span class="p">,</span> <span class="n">mean_squared_score</span><span class="p">)</span>
+<span class="n">MAE_ln</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Regression MAE:&quot;</span><span class="p">,</span> <span class="n">MAE_ln</span><span class="p">)</span>
+<span class="n">mean_squared_score_ln</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Regression MSE&quot;</span><span class="p">,</span> <span class="n">mean_squared_score_ln</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1065,38 +1095,321 @@ Linear Regression MSE 0.2144395844887611
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Linear Regression - Actual vs. Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7cd0f1be8d3cefdd8a5e13b66b794544585db05722a68e76993b6d9411d919e9.png" src="_images/7cd0f1be8d3cefdd8a5e13b66b794544585db05722a68e76993b6d9411d919e9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the coefficients (feature importances) from the trained model</span>
+<span class="n">coefficients</span> <span class="o">=</span> <span class="n">clf_1</span><span class="o">.</span><span class="n">coef_</span>
+
+<span class="c1"># Create a DataFrame to store the feature importances</span>
+<span class="n">feature_importance_df_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Feature&#39;</span><span class="p">:</span> <span class="n">X_test_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">&#39;Importance&#39;</span><span class="p">:</span> <span class="n">coefficients</span><span class="p">})</span>
+
+<span class="c1"># Sort the features by importance in descending order</span>
+<span class="n">feature_importance_df_2</span> <span class="o">=</span> <span class="n">feature_importance_df_2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Importance&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relative Influence of Features:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature_importance_df_2</span><span class="p">)</span>
+
+<span class="c1"># Plot the feature importances in a bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">feature_importance_df_2</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">feature_importance_df_2</span><span class="p">[</span><span class="s1">&#39;Importance&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Features&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Importance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Importances in Linear Regression Model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative Influence of Features:
+        Feature  Importance
+4         Month    0.024669
+2           Z\r    0.007264
+9        Second    0.003136
+3           Day    0.000082
+10  Millisecond    0.000000
+0             X   -0.001522
+1             Y   -0.001735
+8        Minute   -0.004456
+5     DayOfWeek   -0.004879
+6       Quarter   -0.006226
+7          Hour   -0.014279
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-36-e0e014e6d4ad&gt;:20: UserWarning: Glyph 13 (
+) missing from current font.
+  plt.tight_layout()
+) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="_images/601ff493d52898c9efdc9d03dba2f58b2f439f0847cc50231fd9117a503d7d91.png" src="_images/601ff493d52898c9efdc9d03dba2f58b2f439f0847cc50231fd9117a503d7d91.png" />
+</div>
+</div>
 <p>#Random Forest</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
 
-<span class="n">clf_2</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">clf_2</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_acc</span> <span class="o">=</span> <span class="n">clf_2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest R^2:&quot;</span><span class="p">,</span> <span class="n">val_acc</span><span class="p">)</span>
+<span class="n">val_acc_rf</span> <span class="o">=</span> <span class="n">clf_2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest R^2:&quot;</span><span class="p">,</span> <span class="n">val_acc_rf</span><span class="p">)</span>
+
 
 <span class="n">predicted</span> <span class="o">=</span> <span class="n">clf_2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest MAE:&quot;</span><span class="p">,</span> <span class="n">MAE</span><span class="p">)</span>
-<span class="n">mean_squared_score</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest MSE&quot;</span><span class="p">,</span> <span class="n">mean_squared_score</span><span class="p">)</span>
+<span class="n">MAE_rf</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest MAE:&quot;</span><span class="p">,</span> <span class="n">MAE_rf</span><span class="p">)</span>
+<span class="n">mean_squared_score_rf</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest MSE&quot;</span><span class="p">,</span> <span class="n">mean_squared_score_rf</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random Forest R^2: -0.001417377347937565
-Random Forest MAE: 0.34057573664300445
-Random Forest MSE 0.21459295393884403
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random Forest R^2: -0.0014886206464004292
+Random Forest MAE: 0.3405884869516936
+Random Forest MSE 0.2146082206100755
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Random Forest - Actual vs. Predicted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4ddf2f371b910a10760d8ed6a6363fa22537f3b33d1a7f5dcd408b135e1c37b5.png" src="_images/4ddf2f371b910a10760d8ed6a6363fa22537f3b33d1a7f5dcd408b135e1c37b5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the feature importances from the trained model</span>
+<span class="n">feature_importance</span> <span class="o">=</span> <span class="n">clf_2</span><span class="o">.</span><span class="n">feature_importances_</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_test_df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Create a DataFrame to store the feature importances</span>
+<span class="n">feature_importance_df_3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Feature&#39;</span><span class="p">:</span> <span class="n">feature_names</span><span class="p">,</span> <span class="s1">&#39;Importance&#39;</span><span class="p">:</span> <span class="n">feature_importance</span><span class="p">})</span>
+
+<span class="c1"># Sort the features by importance in descending order</span>
+<span class="n">feature_importance_df_3</span> <span class="o">=</span> <span class="n">feature_importance_df_3</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Importance&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relative Influence of Features:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature_importance_df_3</span><span class="p">)</span>
+
+<span class="c1"># Plot the feature importances in a bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">feature_importance_df_3</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">feature_importance_df_3</span><span class="p">[</span><span class="s1">&#39;Importance&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Features&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Importance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Importances in RandomForestRegressor Model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative Influence of Features:
+        Feature  Importance
+1             Y    0.421510
+8        Minute    0.129558
+2           Z\r    0.127120
+0             X    0.123066
+9        Second    0.070646
+5     DayOfWeek    0.066045
+3           Day    0.034490
+4         Month    0.013680
+7          Hour    0.010584
+6       Quarter    0.003302
+10  Millisecond    0.000000
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-37-98d1f5139bfc&gt;:21: UserWarning: Glyph 13 (
+) missing from current font.
+  plt.tight_layout()
+) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="_images/add82095a0aa74fa61438b8b12760f919985c60a1500389996ec521b73762215.png" src="_images/add82095a0aa74fa61438b8b12760f919985c60a1500389996ec521b73762215.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span> <span class="s1">&#39;SVR&#39;</span><span class="p">,</span> <span class="s1">&#39;MLP Regressor&#39;</span><span class="p">,</span> <span class="s1">&#39;Linear Regression&#39;</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">]</span>
+<span class="n">mae_scores</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span> <span class="n">MAE_xgb</span><span class="p">,</span> <span class="s1">&#39;SVR&#39;</span><span class="p">:</span> <span class="n">MAE_svr</span><span class="p">,</span> <span class="s1">&#39;MLP Regressor&#39;</span><span class="p">:</span> <span class="n">MAE_mlp</span><span class="p">,</span>
+              <span class="s1">&#39;Linear Regression&#39;</span><span class="p">:</span> <span class="n">MAE_ln</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span> <span class="n">MAE_rf</span><span class="p">}</span>
+<span class="n">mse_scores</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span> <span class="n">mean_squared_score_xgb</span><span class="p">,</span> <span class="s1">&#39;SVR&#39;</span><span class="p">:</span> <span class="n">mean_squared_score_svr</span><span class="p">,</span> <span class="s1">&#39;MLP Regressor&#39;</span><span class="p">:</span> <span class="n">mean_squared_score_mlp</span><span class="p">,</span>
+              <span class="s1">&#39;Linear Regression&#39;</span><span class="p">:</span> <span class="n">mean_squared_score_ln</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span> <span class="n">mean_squared_score_rf</span><span class="p">}</span>
+<span class="n">r2_scores</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span> <span class="n">val_score_xgb</span><span class="p">,</span> <span class="s1">&#39;SVR&#39;</span><span class="p">:</span> <span class="n">r2_svr</span><span class="p">,</span> <span class="s1">&#39;MLP Regressor&#39;</span><span class="p">:</span> <span class="n">R2_mlp</span><span class="p">,</span>
+             <span class="s1">&#39;Linear Regression&#39;</span><span class="p">:</span> <span class="n">val_acc_ln</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span> <span class="n">val_acc_rf</span><span class="p">}</span>
+
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="n">model_names</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mae_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">],</span>
+                           <span class="s1">&#39;MSE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mse_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">],</span> <span class="s1">&#39;R^2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">r2_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               Model       MAE       MSE       R^2
+0            XGBoost  0.352403  0.230952 -0.077759
+1                SVR  0.323562  0.223872 -0.044717
+2      MLP Regressor  0.344237  0.221130 -0.031924
+3  Linear Regression  0.340433  0.214440 -0.000702
+4      Random Forest  0.340588  0.214608 -0.001489
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame from the scores dictionaries</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="n">model_names</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mae_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">],</span>
+                           <span class="s1">&#39;MSE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mse_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">],</span> <span class="s1">&#39;R^2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">r2_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">]})</span>
+
+<span class="c1"># Plot MAE scores</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;MAE&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Absolute Error (MAE)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean Absolute Error (MAE) for Different Models&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Plot MSE scores</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;MSE&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error (MSE)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean Squared Error (MSE) for Different Models&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Plot R^2 scores</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;R^2&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;R^2 Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;R^2 Score for Different Models&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3446806a51b87ae6d83cf088b642c2b9ca0bc2e4d6229805716d9a29d8a2d3c9.png" src="_images/3446806a51b87ae6d83cf088b642c2b9ca0bc2e4d6229805716d9a29d8a2d3c9.png" />
+<img alt="_images/06f75d645d6e4d7ee7e8bc4de6dbb11a29d71598d87a9d785acedc66c6fe9fc5.png" src="_images/06f75d645d6e4d7ee7e8bc4de6dbb11a29d71598d87a9d785acedc66c6fe9fc5.png" />
+<img alt="_images/31fd782e2cf28e5f0ce5bbd305ae29292916219b9a19e6709e6fd615c3381e81.png" src="_images/31fd782e2cf28e5f0ce5bbd305ae29292916219b9a19e6709e6fd615c3381e81.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_importance_df_1</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Importance&#39;</span><span class="p">:</span> <span class="s1">&#39;Importance_XGBoost&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">feature_importance_df_2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Importance&#39;</span><span class="p">:</span> <span class="s1">&#39;Importance_LinearRegression&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">feature_importance_df_3</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Importance&#39;</span><span class="p">:</span> <span class="s1">&#39;Importance_RandomForest&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">feature_importance_df_1</span><span class="p">,</span> <span class="n">feature_importance_df_2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">merged_df</span><span class="p">,</span> <span class="n">feature_importance_df_3</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">merged_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        Feature  Importance_XGBoost  Importance_LinearRegression  \
+0           Z\r            0.126057                     0.007264   
+1             Y            0.123776                    -0.001735   
+2          Hour            0.112574                    -0.014279   
+3        Minute            0.111738                    -0.004456   
+4         Month            0.110232                     0.024669   
+5             X            0.108772                    -0.001522   
+6           Day            0.107846                     0.000082   
+7        Second            0.103845                     0.003136   
+8     DayOfWeek            0.095160                    -0.004879   
+9       Quarter            0.000000                    -0.006226   
+10  Millisecond            0.000000                     0.000000   
+
+    Importance_RandomForest  
+0                  0.127120  
+1                  0.421510  
+2                  0.010584  
+3                  0.129558  
+4                  0.013680  
+5                  0.123066  
+6                  0.034490  
+7                  0.070646  
+8                  0.066045  
+9                  0.003302  
+10                 0.000000  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Importance_XGBoost&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Importance_LinearRegression&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear Regression&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Importance_RandomForest&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Random Forest&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Features&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Importance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Importances for XGBoost, Linear Regression, and RandomForest&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-41-8544fce4a273&gt;:12: UserWarning: Glyph 13 (
+) missing from current font.
+  plt.tight_layout()
+) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="_images/17b0240361c57e67da2b4a7ccf4af03f87955407f96650bd1bdf380ec24cefb1.png" src="_images/17b0240361c57e67da2b4a7ccf4af03f87955407f96650bd1bdf380ec24cefb1.png" />
 </div>
 </div>
 </section>
@@ -1133,22 +1446,13 @@ Random Forest MSE 0.21459295393884403
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="proposal.html"
+       href="data_visualization.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Research Proposal</p>
+        <p class="prev-next-title">Input Data and Graphs</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
