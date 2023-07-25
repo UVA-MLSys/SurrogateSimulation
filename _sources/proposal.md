@@ -1,5 +1,6 @@
 ﻿# Research Proposal
 
+
 ## Surrogate Modeling for Efficient Earthquake Prediction
 Vishal Kamalakrishnan, Kevin Ma, Zachary Russell, Justin Zheng  
 
@@ -10,6 +11,8 @@ Professor Geoffrey Fox
 Surrogate Simulation Team 3
 
 5/31/2023 – 7/24/2023
+
+- - -
 
 ## Introduction
 Earthquakes pose a significant threat to human lives and infrastructure, necessitating accurate prediction models for timely responses. Traditional physics-based simulations and monitoring systems, while accurate, often require substantial computational time. This research aims to develop a surrogate model that matches the accuracy of physics-based models while significantly reducing computation time. By utilizing machine learning and data analysis techniques, the study seeks to create a surrogate model for quick seismic activity assessment and earthquake prediction, enabling timely warnings and effective emergency response.
