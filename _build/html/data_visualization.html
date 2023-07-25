@@ -373,20 +373,92 @@ for our model</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
 
 <span class="c1"># Access the data in the DataFrame</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Date        Time         Year         X        Y  Magnitude       Z
-0  12/31/59  0:03:09.00  1960.002196 -119.0502  33.9790       6.50  8.2474
-1    1/2/60  0:08:49.00  1960.006125 -115.6222  33.0793       4.25  7.9322
-2    1/2/60  0:10:31.00  1960.007305 -115.6323  33.1220       3.03  8.4015
-3    1/2/60  0:10:32.00  1960.007320 -115.5851  33.0745       3.03  7.9678
-4    1/2/60  0:11:07.00  1960.007720 -115.6256  33.0290       3.08  7.9737
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Year</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Magnitude</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12/31/59</td>
+      <td>0:03:09.00</td>
+      <td>1960.002196</td>
+      <td>-119.0502</td>
+      <td>33.9790</td>
+      <td>6.50</td>
+      <td>8.2474</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1/2/60</td>
+      <td>0:08:49.00</td>
+      <td>1960.006125</td>
+      <td>-115.6222</td>
+      <td>33.0793</td>
+      <td>4.25</td>
+      <td>7.9322</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1/2/60</td>
+      <td>0:10:31.00</td>
+      <td>1960.007305</td>
+      <td>-115.6323</td>
+      <td>33.1220</td>
+      <td>3.03</td>
+      <td>8.4015</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1/2/60</td>
+      <td>0:10:32.00</td>
+      <td>1960.007320</td>
+      <td>-115.5851</td>
+      <td>33.0745</td>
+      <td>3.03</td>
+      <td>7.9678</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1/2/60</td>
+      <td>0:11:07.00</td>
+      <td>1960.007720</td>
+      <td>-115.6256</td>
+      <td>33.0290</td>
+      <td>3.08</td>
+      <td>7.9737</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -398,16 +470,31 @@ for our model</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/59941d3010bf21edddf7382a2732b5f92e19d0d1069335a40f28b85b5e858e71.png" src="_images/59941d3010bf21edddf7382a2732b5f92e19d0d1069335a40f28b85b5e858e71.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Magnitude Histogram&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># Adjust the size (s) of the points as per your preference</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d2ba86fef2c4b9ba5b373819cb6d1167bb559a086852e8ddf40955d46a0343e7.png" src="_images/d2ba86fef2c4b9ba5b373819cb6d1167bb559a086852e8ddf40955d46a0343e7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># Adjust the size (s) of the points as per your preference</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Earthquake Coordinates&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
@@ -418,8 +505,6 @@ for our model</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/59941d3010bf21edddf7382a2732b5f92e19d0d1069335a40f28b85b5e858e71.png" src="_images/59941d3010bf21edddf7382a2732b5f92e19d0d1069335a40f28b85b5e858e71.png" />
-<img alt="_images/d2ba86fef2c4b9ba5b373819cb6d1167bb559a086852e8ddf40955d46a0343e7.png" src="_images/d2ba86fef2c4b9ba5b373819cb6d1167bb559a086852e8ddf40955d46a0343e7.png" />
 <img alt="_images/b7814913ec24dec389e2a7e0e6eb6eb223b034a5231ec68dee3a6dc48787d970.png" src="_images/b7814913ec24dec389e2a7e0e6eb6eb223b034a5231ec68dee3a6dc48787d970.png" />
 </div>
 </div>
