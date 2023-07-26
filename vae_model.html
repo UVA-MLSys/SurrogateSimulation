@@ -331,7 +331,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -347,6 +349,24 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vae-architecture">VAE Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder">Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder">Decoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-loss">Reconstruction Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kullback-leibler-kl-divergence">Kullback-Leibler (KL) Divergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-vae">Training The VAE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-space-exploration">Latent Space Exploration:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-synthetic-earthquake-sequences">Generating Synthetic Earthquake Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-and-fine-tuning">Evaluation And Fine-Tuning:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -358,16 +378,43 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hypothetical-model-for-vae">
 <h1>Hypothetical Model for VAE<a class="headerlink" href="#hypothetical-model-for-vae" title="Permalink to this heading">#</a></h1>
-<p>VAE Architecture:
-Encoder: a feedforward neural network that will take earthquake data from the ETAS model as input to a lower-dimensional latent space representation. As this is hypothetical, we would need to figure out what components of the encoder architecture that would need to be implemented, however we imagine that it will contain several fully connected layers followed by activation functions (Rectified Linear Unit). The last layer will produce the mean and variance of the latent distribution (Gaussian Distribution)</p>
-<p>Decoder: a feedforward neural network that takes the latent representation produced by the encoder and reconstructs the earthquake data. It would also contain fully connected layers with activation functions. THe output layer of the decoder will generate the reconstruction earthquake data.</p>
-<p>Reconstruction loss: Measures how well the decoder can reconstruct the original earthquake data from the latent space. We would most likely use mean squared error, but other choices we could use to measure this would be binary cross-Entropy (BCE) loss, depending on the earthquake data.</p>
-<p>Kullback-Leibler (KL) divergence: Measures the difference between the learned latent distribution versus the desired distribution. Acts as a regularization term, encouraging the learned latent space to be structured and continuous</p>
+<section id="vae-architecture">
+<h2>VAE Architecture<a class="headerlink" href="#vae-architecture" title="Permalink to this heading">#</a></h2>
+<p><img alt="VAE Architecture Model" src="_images/vae_model.png" /></p>
+<section id="encoder">
+<h3>Encoder<a class="headerlink" href="#encoder" title="Permalink to this heading">#</a></h3>
+<p>A feedforward neural network that will take earthquake data from the ETAS model as input to a lower-dimensional latent space representation. As this is hypothetical, we would need to figure out what components of the encoder architecture that would need to be implemented, however we imagine that it will contain several fully connected layers followed by activation functions (Rectified Linear Unit). The last layer will produce the mean and variance of the latent distribution (Gaussian Distribution)</p>
+</section>
+<section id="decoder">
+<h3>Decoder<a class="headerlink" href="#decoder" title="Permalink to this heading">#</a></h3>
+<p>A feedforward neural network that takes the latent representation produced by the encoder and reconstructs the earthquake data. It would also contain fully connected layers with activation functions. THe output layer of the decoder will generate the reconstruction earthquake data.</p>
+</section>
+<section id="reconstruction-loss">
+<h3>Reconstruction Loss<a class="headerlink" href="#reconstruction-loss" title="Permalink to this heading">#</a></h3>
+<p>Measures how well the decoder can reconstruct the original earthquake data from the latent space. We would most likely use mean squared error, but other choices we could use to measure this would be binary cross-Entropy (BCE) loss, depending on the earthquake data.</p>
+</section>
+<section id="kullback-leibler-kl-divergence">
+<h3>Kullback-Leibler (KL) Divergence<a class="headerlink" href="#kullback-leibler-kl-divergence" title="Permalink to this heading">#</a></h3>
+<p>Measures the difference between the learned latent distribution versus the desired distribution. Acts as a regularization term, encouraging the learned latent space to be structured and continuous</p>
 <p>Total loss used for training would be a combination of the reconstruction loss and the KL divergence, weighted by hyperparameters that control the importance of each term.</p>
-<p>Training the VAE:
-We would then train the VAE using the earthquake dataset produced by the ETAS model. During this training, the encoder will map the earthquake data into the latent space, and the decoder will attempt to reconstruct the original data from the latent space. The VAE’s parameters (weights and biases) are updated to minimize the combined loss using optimization techniques like Stochastic Gradient Descent (SGD) or Adam.</p>
-<p>Latent space exploration:
-Once the VAE is trained, you can explore the latent space to understand the learned representations better. Visualize the latent space using dimensionality reduction techniques (e.g., t-SNE or PCA) to see if the earthquake sequences cluster in meaningful ways. By</p>
+</section>
+</section>
+<section id="training-the-vae">
+<h2>Training The VAE<a class="headerlink" href="#training-the-vae" title="Permalink to this heading">#</a></h2>
+<p>We would then train the VAE using the earthquake dataset produced by the ETAS model. During this training, the encoder will map the earthquake data into the latent space, and the decoder will attempt to reconstruct the original data from the latent space. The VAE’s parameters (weights and biases) are updated to minimize the combined loss using optimization techniques like Stochastic Gradient Descent (SGD) or Adam.</p>
+</section>
+<section id="latent-space-exploration">
+<h2>Latent Space Exploration:<a class="headerlink" href="#latent-space-exploration" title="Permalink to this heading">#</a></h2>
+<p>Once the VAE is trained, you can explore the latent space to understand the learned representations better. Visualize the latent space using dimensionality reduction techniques (e.g., t-SNE or PCA) to see if the earthquake sequences cluster in meaningful ways. By examining the latent space, we might discover interesting patterns, latent variables, and relationships among earthquake events.</p>
+</section>
+<section id="generating-synthetic-earthquake-sequences">
+<h2>Generating Synthetic Earthquake Sequences<a class="headerlink" href="#generating-synthetic-earthquake-sequences" title="Permalink to this heading">#</a></h2>
+<p>To generate synthetic earthquake sequences, randomly sample points from the latent space, and then pass these latent representations through the decoder. The decoder will produce synthetic earthquake data that can be analyzed and compared to the real earthquake data.</p>
+</section>
+<section id="evaluation-and-fine-tuning">
+<h2>Evaluation And Fine-Tuning:<a class="headerlink" href="#evaluation-and-fine-tuning" title="Permalink to this heading">#</a></h2>
+<p>Evaluate the quality of the generated synthetic earthquake sequences using statistical measures and domain knowledge. If necessary, fine-tune the VAE’s architecture, hyperparameters, or data preprocessing to improve the quality of the generated earthquake sequences.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -419,6 +466,30 @@ Once the VAE is trained, you can explore the latent space to understand the lear
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vae-architecture">VAE Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder">Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder">Decoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-loss">Reconstruction Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kullback-leibler-kl-divergence">Kullback-Leibler (KL) Divergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-vae">Training The VAE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-space-exploration">Latent Space Exploration:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-synthetic-earthquake-sequences">Generating Synthetic Earthquake Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-and-fine-tuning">Evaluation And Fine-Tuning:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
