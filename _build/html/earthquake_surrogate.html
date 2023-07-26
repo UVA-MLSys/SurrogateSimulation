@@ -378,6 +378,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-error-values">Plotting Error Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-models">Comparison of Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
 </ul>
             </nav>
         </div>
@@ -463,6 +464,7 @@ max         7.650000     20.000000
 </section>
 <section id="data-table-transformation">
 <h2>Data Table Transformation<a class="headerlink" href="#data-table-transformation" title="Permalink to this heading">#</a></h2>
+<p>Variables were made to be suitable for machine learning models. For example the date was put into a format where the day, month, and year were separated. Furthermore we extrapolate from the dates the quarter of the year the earthquake occurred. Feature encoding was also performed, specifically ordinal encoding.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -616,6 +618,8 @@ max         7.650000     20.000000
 </section>
 <section id="model-training-and-preprocessing">
 <h2>Model Training And Preprocessing<a class="headerlink" href="#model-training-and-preprocessing" title="Permalink to this heading">#</a></h2>
+<p>Once the data was transformed and made suitable for our models, we split the data using a 70% training set to 30% testing set split.</p>
+<p>For certain models, relative influence was able to be calculated in order to see which predictor variables affected the specific model the most. This calculation and visualizations can be seen specifically for the XGBoost, Linear Regression, and Random Forest models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Magnitude&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Features</span>
@@ -707,6 +711,7 @@ Name: Magnitude, Length: 9601, dtype: float64
 </section>
 <section id="xgb-regressor">
 <h2>XGB Regressor<a class="headerlink" href="#xgb-regressor" title="Permalink to this heading">#</a></h2>
+<p>A variation of a gradient boosting algorithm best suited for regression and classification tasks through decision trees</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xgb_model</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="s2">&quot;reg:squarederror&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -836,6 +841,7 @@ XGB Regressor MSE: 0.23095209796608107
 </section>
 <section id="support-vector-regression">
 <h2>Support Vector Regression<a class="headerlink" href="#support-vector-regression" title="Permalink to this heading">#</a></h2>
+<p>A model used for regression tasks specifically through finding a function that approximates the relationship between the input features and the target variable, while controlling the margin of error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
@@ -899,6 +905,7 @@ SVR MSE: 0.22387157557060747
 </section>
 <section id="mlp-regressor">
 <h2>MLP Regressor<a class="headerlink" href="#mlp-regressor" title="Permalink to this heading">#</a></h2>
+<p>The multi-layered perceptron regression model is an artificial neural network used for regression tasks. It is used in approximating complex non-linear relationships and mapping feature values to corresponding output values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPRegressor</span>
@@ -961,6 +968,7 @@ MLP Regressor MSE: 0.2241336997260872
 </section>
 <section id="linear-regression">
 <h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h2>
+<p>This is a simple model that attempts to minimize the sum of squared errors. The final model predicts along a linear slope line that goes through the data points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -1072,6 +1080,7 @@ Linear Regression MSE 0.2144395844887611
 </section>
 <section id="random-forest">
 <h2>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this heading">#</a></h2>
+<p>This is a supervised machine learning model that uses the mean result from decision trees in order to predict an output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf_2</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -1326,6 +1335,10 @@ Random Forest MSE 0.2146082206100755
 </div>
 </div>
 </section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
+<p>Earthquakes as a whole are a fairly random and unpredictable phenomena. We found that deterministic models were not suitable for predicting earthquake magnitudes as seen by our low MAE, MSE, and R^2 values. Though relative influence was an interesting factor to consider, the earthquake data does not fit these models. We hope to find success in the near future through exploring generative models as suitable models for earthquake prediction.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1419,6 +1432,7 @@ Random Forest MSE 0.2146082206100755
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-error-values">Plotting Error Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-models">Comparison of Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
 </ul>
   </nav></div>
 
