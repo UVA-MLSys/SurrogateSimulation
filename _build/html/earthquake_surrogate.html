@@ -161,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="data_visualization.html">Input Data and Graphs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Earthquake Surrogate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="keras_classifier.html">Keras Classifier (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vae_model.html">Hypothetical Model for VAE</a></li>
 </ul>
 
     </div>
@@ -357,7 +358,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-table-transformation">Data Table Transformation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training-and-preprocessing">Model Training And Preprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xgb-regressor">XGB Regressor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xgb-regressor">XGB Regressor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xgb-regressor-actual-vs-predicted">XGB Regressor - Actual vs. Predicted</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-xgb-regressor">Feature Importance In XGB Regressor</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-regression">Support Vector Regression</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svr-actual-vs-predicted">SVR - Actual vs. Predicted</a></li>
 </ul>
@@ -765,6 +770,8 @@ XGB Regressor MSE: 0.23095209796608107
 </div>
 </div>
 </div>
+<section id="xgb-regressor-actual-vs-predicted">
+<h3>XGB Regressor - Actual vs. Predicted<a class="headerlink" href="#xgb-regressor-actual-vs-predicted" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
@@ -791,6 +798,9 @@ XGB Regressor MSE: 0.23095209796608107
 <img alt="_images/fc90a438a74a4e18ced91c69337ca80e7d43468ec1b85ecb2cfcc86251bf4051.png" src="_images/fc90a438a74a4e18ced91c69337ca80e7d43468ec1b85ecb2cfcc86251bf4051.png" />
 </div>
 </div>
+</section>
+<section id="feature-importance-in-xgb-regressor">
+<h3>Feature Importance In XGB Regressor<a class="headerlink" href="#feature-importance-in-xgb-regressor" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert X_test to a DataFrame</span>
@@ -862,6 +872,7 @@ XGB Regressor MSE: 0.23095209796608107
 <img alt="_images/640caa02eb2259f3d1510e42cd7992fe6ec51b9334997628b47ace76ca1c8ed8.png" src="_images/640caa02eb2259f3d1510e42cd7992fe6ec51b9334997628b47ace76ca1c8ed8.png" />
 </div>
 </div>
+</section>
 </section>
 <section id="support-vector-regression">
 <h2>Support Vector Regression<a class="headerlink" href="#support-vector-regression" title="Permalink to this heading">#</a></h2>
@@ -971,9 +982,9 @@ SVR MSE: 0.22387157557060747
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLP Regressor R^2: -0.039719135908382164
-MLP Regressor MAE: 0.35631097499533
-MLP Regressor MSE: 0.2228006081062856
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLP Regressor R^2: -0.06420248395389594
+MLP Regressor MAE: 0.33416011477004043
+MLP Regressor MSE: 0.22804712579036424
 </pre></div>
 </div>
 </div>
@@ -1003,7 +1014,7 @@ MLP Regressor MSE: 0.2228006081062856
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/648001f877074c1db0d706f302c0b4614ab723783b51765997809cc532f0815f.png" src="_images/648001f877074c1db0d706f302c0b4614ab723783b51765997809cc532f0815f.png" />
+<img alt="_images/fa320ede883f5008c20ea7eb3becd35a80291aedfbcc5d5c0bc458482474042b.png" src="_images/fa320ede883f5008c20ea7eb3becd35a80291aedfbcc5d5c0bc458482474042b.png" />
 </div>
 </div>
 </section>
@@ -1137,7 +1148,7 @@ Linear Regression MSE 0.2144395844887611
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>) missing from current font.l\Temp\ipykernel_9000\816986420.py:10: UserWarning: Glyph 13 (
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>) missing from current font.l\Temp\ipykernel_19916\816986420.py:10: UserWarning: Glyph 13 (
   plt.tight_layout()
 ) missing from current font.l\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 13 (
   fig.canvas.print_figure(bytes_io, **kw)
@@ -1273,7 +1284,7 @@ Random Forest MSE 0.2146082206100755
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>) missing from current font.l\Temp\ipykernel_9000\139572493.py:10: UserWarning: Glyph 13 (
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>) missing from current font.l\Temp\ipykernel_19916\139572493.py:10: UserWarning: Glyph 13 (
   plt.tight_layout()
 ) missing from current font.l\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 13 (
   fig.canvas.print_figure(bytes_io, **kw)
@@ -1302,7 +1313,7 @@ Random Forest MSE 0.2146082206100755
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               Model       MAE       MSE       R^2
 0            XGBoost  0.352403  0.230952 -0.077759
 1                SVR  0.323562  0.223872 -0.044717
-2      MLP Regressor  0.356311  0.222801 -0.039719
+2      MLP Regressor  0.334160  0.228047 -0.064202
 3  Linear Regression  0.340433  0.214440 -0.000702
 4      Random Forest  0.340588  0.214608 -0.001489
 </pre></div>
@@ -1318,8 +1329,13 @@ Random Forest MSE 0.2146082206100755
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame from the scores dictionaries</span>
 <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="n">model_names</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mae_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">],</span>
                            <span class="s1">&#39;MSE&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mse_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">],</span> <span class="s1">&#39;R^2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">r2_scores</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">]})</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
 
 <span class="c1"># Plot MAE scores</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -1334,6 +1350,16 @@ Random Forest MSE 0.2146082206100755
 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8bf63facce3aac0b1668d85176b85dc62e1e01fb177e90c8136ae33cf3ddd350.png" src="_images/8bf63facce3aac0b1668d85176b85dc62e1e01fb177e90c8136ae33cf3ddd350.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
 
 <span class="c1"># Plot MSE scores</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -1348,6 +1374,16 @@ Random Forest MSE 0.2146082206100755
 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4ad19d8b69800aa694efb34f25d589ff87d5c9441fdc101894d1a4f4fe8dd99a.png" src="_images/4ad19d8b69800aa694efb34f25d589ff87d5c9441fdc101894d1a4f4fe8dd99a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
 
 <span class="c1"># Plot R^2 scores</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -1360,15 +1396,13 @@ Random Forest MSE 0.2146082206100755
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>  <span class="c1"># Show gridlines only on the y-axis for better readability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a4ddfea4988aa3573fde26608d2393c8c09edeadb5ef09f0a75c57983fc2896d.png" src="_images/a4ddfea4988aa3573fde26608d2393c8c09edeadb5ef09f0a75c57983fc2896d.png" />
-<img alt="_images/a49973e9896eb6deb5cb3413c9ef9034cf6f774121d4e09081c5de94c4596c7d.png" src="_images/a49973e9896eb6deb5cb3413c9ef9034cf6f774121d4e09081c5de94c4596c7d.png" />
-<img alt="_images/2616a7ac557474d14419f49c74c556da6924a43328f5b63ea900d36ded045509.png" src="_images/2616a7ac557474d14419f49c74c556da6924a43328f5b63ea900d36ded045509.png" />
+<img alt="_images/15dcdda0b30a4668f92247ed4bc682c0e578d8f5780cf1a45689e9492b4489dc.png" src="_images/15dcdda0b30a4668f92247ed4bc682c0e578d8f5780cf1a45689e9492b4489dc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1448,7 +1482,7 @@ Random Forest MSE 0.2146082206100755
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>) missing from current font.l\Temp\ipykernel_9000\1467680380.py:18: UserWarning: Glyph 13 (
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>) missing from current font.l\Temp\ipykernel_19916\1467680380.py:18: UserWarning: Glyph 13 (
   plt.tight_layout()
 ) missing from current font.l\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 13 (
   fig.canvas.print_figure(bytes_io, **kw)
@@ -1534,7 +1568,11 @@ Random Forest MSE 0.2146082206100755
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-table-transformation">Data Table Transformation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training-and-preprocessing">Model Training And Preprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xgb-regressor">XGB Regressor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xgb-regressor">XGB Regressor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xgb-regressor-actual-vs-predicted">XGB Regressor - Actual vs. Predicted</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-xgb-regressor">Feature Importance In XGB Regressor</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-regression">Support Vector Regression</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svr-actual-vs-predicted">SVR - Actual vs. Predicted</a></li>
 </ul>

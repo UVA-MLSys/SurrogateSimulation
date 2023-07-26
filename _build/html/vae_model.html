@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; Surrogate Simulation</title>
+    <title>Hypothetical Model for VAE &#8212; Surrogate Simulation</title>
   
   
   
@@ -61,10 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vae_model';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Research Proposal" href="proposal.html" />
+    <link rel="prev" title="Keras Classifier (Experimental)" href="keras_classifier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,18 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Introduction
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="proposal.html">Research Proposal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_visualization.html">Input Data and Graphs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="earthquake_surrogate.html">Earthquake Surrogate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="keras_classifier.html">Keras Classifier (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vae_model.html">Hypothetical Model for VAE</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hypothetical Model for VAE</a></li>
 </ul>
 
     </div>
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvae_model.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -262,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/vae_model.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,9 +331,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -344,19 +342,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Hypothetical Model for VAE</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-us">About Us</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -366,38 +356,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>We are driven by the mission to develop a state-of-the-art earthquake prediction model that combines accuracy with efficiency. Earthquakes, with their sudden and devastating impact, call for timely and reliable solutions to minimize their consequences on society and infrastructure. Our goal is to create a surrogate model that matches the precision of traditional physics-based models while drastically reducing computation time. By harnessing the power of machine learning and advanced data analysis techniques, we aim to revolutionize earthquake forecasting. Our model will provide rapid assessments of seismic activity and predictive insights, enabling timely warnings and empowering emergency response efforts.</p>
-<hr class="docutils" />
-<section id="about-us">
-<h2>About Us<a class="headerlink" href="#about-us" title="Permalink to this heading">#</a></h2>
-<p><strong>Vishal Kamalakrishnan</strong><br />
-3rd Year Computer Science Major<br />
-<em>University of Virginia</em><br />
-<a class="reference external" href="mailto:vishkamalk&#37;&#52;&#48;gmail&#46;com">vishkamalk<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
-<p><strong>Kevin Ma</strong><br />
-4th Year Computer Science Major<br />
-<em>University of Virginia</em><br />
-<a class="reference external" href="mailto:kdm4bnm&#37;&#52;&#48;virginia&#46;edu">kdm4bnm<span>&#64;</span>virginia<span>&#46;</span>edu</a></p>
-<p><strong>Zachary Russell</strong><br />
-4th Year Computer Science Major<br />
-<em>University of Virginia</em><br />
-<a class="reference external" href="mailto:zhr8wex&#37;&#52;&#48;virginia&#46;edu">zhr8wex<span>&#64;</span>virginia<span>&#46;</span>edu</a></p>
-<p><strong>Justin Zheng</strong><br />
-3rd Year Systems and Information Engineering Major<br />
-<em>University of Virginia</em><br />
-<a class="reference external" href="mailto:jzd4vb&#37;&#52;&#48;virginia&#46;edu">jzd4vb<span>&#64;</span>virginia<span>&#46;</span>edu</a></p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="proposal.html">Research Proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_visualization.html">Input Data and Graphs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="earthquake_surrogate.html">Earthquake Surrogate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="keras_classifier.html">Keras Classifier (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vae_model.html">Hypothetical Model for VAE</a></li>
-</ul>
-</div>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="hypothetical-model-for-vae">
+<h1>Hypothetical Model for VAE<a class="headerlink" href="#hypothetical-model-for-vae" title="Permalink to this heading">#</a></h1>
+<p>VAE Architecture:
+Encoder: a feedforward neural network that will take earthquake data from the ETAS model as input to a lower-dimensional latent space representation. As this is hypothetical, we would need to figure out what components of the encoder architecture that would need to be implemented, however we imagine that it will contain several fully connected layers followed by activation functions (Rectified Linear Unit). The last layer will produce the mean and variance of the latent distribution (Gaussian Distribution)</p>
+<p>Decoder: a feedforward neural network that takes the latent representation produced by the encoder and reconstructs the earthquake data. It would also contain fully connected layers with activation functions. THe output layer of the decoder will generate the reconstruction earthquake data.</p>
+<p>Reconstruction loss: Measures how well the decoder can reconstruct the original earthquake data from the latent space. We would most likely use mean squared error, but other choices we could use to measure this would be binary cross-Entropy (BCE) loss, depending on the earthquake data.</p>
+<p>Kullback-Leibler (KL) divergence: Measures the difference between the learned latent distribution versus the desired distribution. Acts as a regularization term, encouraging the learned latent space to be structured and continuous</p>
+<p>Total loss used for training would be a combination of the reconstruction loss and the KL divergence, weighted by hyperparameters that control the importance of each term.</p>
+<p>Training the VAE:
+We would then train the VAE using the earthquake dataset produced by the ETAS model. During this training, the encoder will map the earthquake data into the latent space, and the decoder will attempt to reconstruct the original data from the latent space. The VAE’s parameters (weights and biases) are updated to minimize the combined loss using optimization techniques like Stochastic Gradient Descent (SGD) or Adam.</p>
+<p>Latent space exploration:
+Once the VAE is trained, you can explore the latent space to understand the learned representations better. Visualize the latent space using dimensionality reduction techniques (e.g., t-SNE or PCA) to see if the earthquake sequences cluster in meaningful ways. By</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,14 +401,14 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
-       href="proposal.html"
-       title="next page">
+    <a class="left-prev"
+       href="keras_classifier.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Research Proposal</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Keras Classifier (Experimental)</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -449,20 +419,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-us">About Us</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
