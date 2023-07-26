@@ -7,8 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Surrogate Simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Hypothetical Model for VAE &#8212; Surrogate Simulation</title>
   
   
   
@@ -60,9 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vae_model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Keras Classifier (Experimental)" href="keras_classifier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,12 +155,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="proposal.html">Research Proposal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_visualization.html">Input Data and Graphs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="earthquake_surrogate.html">Earthquake Surrogate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="keras_classifier.html">Keras Classifier (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vae_model.html">Hypothetical Model for VAE</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hypothetical Model for VAE</a></li>
 </ul>
 
     </div>
@@ -230,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvae_model.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -242,6 +244,54 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/vae_model.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -292,7 +342,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Hypothetical Model for VAE</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -306,13 +356,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
+  <section class="tex2jax_ignore mathjax_ignore" id="hypothetical-model-for-vae">
+<h1>Hypothetical Model for VAE<a class="headerlink" href="#hypothetical-model-for-vae" title="Permalink to this heading">#</a></h1>
+<p>VAE Architecture:
+Encoder: a feedforward neural network that will take earthquake data from the ETAS model as input to a lower-dimensional latent space representation. As this is hypothetical, we would need to figure out what components of the encoder architecture that would need to be implemented, however we imagine that it will contain several fully connected layers followed by activation functions (Rectified Linear Unit). The last layer will produce the mean and variance of the latent distribution (Gaussian Distribution)</p>
+<p>Decoder: a feedforward neural network that takes the latent representation produced by the encoder and reconstructs the earthquake data. It would also contain fully connected layers with activation functions. THe output layer of the decoder will generate the reconstruction earthquake data.</p>
+<p>Reconstruction loss: Measures how well the decoder can reconstruct the original earthquake data from the latent space. We would most likely use mean squared error, but other choices we could use to measure this would be binary cross-Entropy (BCE) loss, depending on the earthquake data.</p>
+<p>Kullback-Leibler (KL) divergence: Measures the difference between the learned latent distribution versus the desired distribution. Acts as a regularization term, encouraging the learned latent space to be structured and continuous</p>
+<p>Total loss used for training would be a combination of the reconstruction loss and the KL divergence, weighted by hyperparameters that control the importance of each term.</p>
+<p>Training the VAE:
+We would then train the VAE using the earthquake dataset produced by the ETAS model. During this training, the encoder will map the earthquake data into the latent space, and the decoder will attempt to reconstruct the original data from the latent space. The VAE’s parameters (weights and biases) are updated to minimize the combined loss using optimization techniques like Stochastic Gradient Descent (SGD) or Adam.</p>
+<p>Latent space exploration:
+Once the VAE is trained, you can explore the latent space to understand the learned representations better. Visualize the latent space using dimensionality reduction techniques (e.g., t-SNE or PCA) to see if the earthquake sequences cluster in meaningful ways. By</p>
+</section>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -325,6 +401,15 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="keras_classifier.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Keras Classifier (Experimental)</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
