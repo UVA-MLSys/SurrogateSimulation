@@ -7,7 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Surrogate Simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to get Started: &#8212; Surrogate Simulation</title>
   
   
   
@@ -59,12 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'instructions';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -232,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Finstructions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -244,6 +243,54 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/instructions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -283,7 +330,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -292,42 +341,138 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How to get Started:</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-anaconda">Step 1: Download Anaconda:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-open-anaconda-navigator">Step 2: Open Anaconda Navigator:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-a-new-environment">Step 3: Create a New Environment:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-activate-the-environment">Step 4: Activate the Environment:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-launch-ide-or-jupyter-notebook">Step 5: Launch IDE or Jupyter Notebook:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-installing-packages">Step 6: Installing Packages:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-running-the-code">Step 7: Running the Code:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="how-to-get-started">
+<h1>How to get Started:<a class="headerlink" href="#how-to-get-started" title="Permalink to this heading">#</a></h1>
+<section id="step-1-download-anaconda">
+<h2>Step 1: Download Anaconda:<a class="headerlink" href="#step-1-download-anaconda" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Visit the Anaconda website: <a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a>.</p></li>
+<li><p>Download the Anaconda distribution appropriate for your operating system (Windows, macOS, or Linux).</p>
+<ul>
+<li><p>Choose the Python 3.x version</p></li>
+</ul>
+</li>
+</ul>
+<p> </p>
+</section>
+<section id="step-2-open-anaconda-navigator">
+<h2>Step 2: Open Anaconda Navigator:<a class="headerlink" href="#step-2-open-anaconda-navigator" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Once Anaconda is successfully installed, open the Anaconda Navigator application which acts as a GUI</p></li>
+</ul>
+<p> </p>
+</section>
+<section id="step-3-create-a-new-environment">
+<h2>Step 3: Create a New Environment:<a class="headerlink" href="#step-3-create-a-new-environment" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In the Anaconda Navigator window, click on the “Environments” tab on the left sidebar.</p></li>
+<li><p>Click the “Create” button at the bottom left corner of the sidebar to create a new environment.</p></li>
+<li><p>Enter a name for your new environment (e.g., “myenv”) in the “Name” field.</p></li>
+<li><p>Select the Python version you want to use for the environment (e.g., Python 3.7).</p></li>
+<li><p>Install the packages from the “Anaconda” Click the “Create” button to create the new environment.</p></li>
+<li><p>Click on the Search Packages search bar in the right hand corner of the window and search for a packag “cartopy” and install it</p></li>
+</ul>
+<p> </p>
+</section>
+<section id="step-4-activate-the-environment">
+<h2>Step 4: Activate the Environment:<a class="headerlink" href="#step-4-activate-the-environment" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Once the environment is created, go back to the “Home” tab in Anaconda Navigator.</p></li>
+<li><p>Click on the dropdown menu next to the “Applications on” text.</p></li>
+<li><p>Select the environment you just created (e.g., “myenv”) from the list.</p></li>
+</ul>
+<p> </p>
+</section>
+<section id="step-5-launch-ide-or-jupyter-notebook">
+<h2>Step 5: Launch IDE or Jupyter Notebook:<a class="headerlink" href="#step-5-launch-ide-or-jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In the Home Tab, launch VSCode, PyCharm or your IDE of choice or a Jupyter Notebook file</p>
+<ul>
+<li><p>This will open the chosen IDE within your new Anaconda environment, ready for use.</p></li>
+</ul>
+</li>
+</ul>
+<p> </p>
+</section>
+<section id="step-6-installing-packages">
+<h2>Step 6: Installing Packages:<a class="headerlink" href="#step-6-installing-packages" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Inside your IDE, navigate to the directory of the launched project using the cd command (if the directory is not already at the root directory of the project)</p></li>
+<li><p>Install all required pip packages</p>
+<ul>
+<li><p>For this code the pip packages required are numpy, matplotlib</p></li>
+<li><p>Can be installed using the command: pip install name (where name is the name of the package)</p></li>
+</ul>
+</li>
+<li><p>Install all required conda packages</p>
+<ul>
+<li><p>For this code the pip packages required are cartopy</p></li>
+<li><p>Can be installed using the command: conda install name (where name is the name of the package)</p></li>
+</ul>
+</li>
+</ul>
+<p> </p>
+</section>
+<section id="step-7-running-the-code">
+<h2>Step 7: Running the Code:<a class="headerlink" href="#step-7-running-the-code" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Run the ETAS_ChatGPT_V2.12.py file by using the run button from your IDE or by using the command python3 ETAS_ChatGPT_V2.12.py</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -346,6 +491,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download-anaconda">Step 1: Download Anaconda:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-open-anaconda-navigator">Step 2: Open Anaconda Navigator:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-a-new-environment">Step 3: Create a New Environment:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-activate-the-environment">Step 4: Activate the Environment:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-launch-ide-or-jupyter-notebook">Step 5: Launch IDE or Jupyter Notebook:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-installing-packages">Step 6: Installing Packages:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-running-the-code">Step 7: Running the Code:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

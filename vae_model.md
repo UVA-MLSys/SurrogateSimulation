@@ -1,5 +1,7 @@
 # Hypothetical Model for VAE
 
+- - -
+
 ### VAE Architecture
 
 ![VAE Architecture Model](vae_model.png)
