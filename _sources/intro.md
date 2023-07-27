@@ -7,7 +7,7 @@ We are driven by the mission to develop a state-of-the-art earthquake prediction
 __Vishal Kamalakrishnan__  
 3rd Year Computer Science Major  
 _University of Virginia_  
-vishkamalk@gmail.com
+cjq2cw@virginia.edu
 
 __Kevin Ma__  
 4th Year Computer Science Major  
