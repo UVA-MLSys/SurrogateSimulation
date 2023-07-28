@@ -1,20 +1,17 @@
 # Surrogate Simulation for Earthquake Prediction
 
-## Contributors:
-Vishal Kamalakrishnan, Zach Russell, Kevin Ma, and Justin Zheng
+#### Vishal Kamalakrishnan, Zach Russell, Kevin Ma, and Justin Zheng
+#### Research Mentors: Prof. Geoffrey Fox, Prof. Judy Fox, Md. Khairul Islam
+#### UVA-MLSYS Summer Research Program 2023
 
-## Description:
+## Project Overview
+Our mission is to develop earthquake prediction model that combines the accuracy and efficiency. Earthquakes, with their sudden and devastating impact, call for timely and reliable solutions to minimize their consequences on society and infrastructure. Our goal is to create a surrogate model that matches the precision of traditional physics-based models while drastically reducing computation time
 
-Utilizing surrogate simulation in order to predict earthquakes
+We compared many iterative models including XGB Regressor, Support Vector Regression, MLP Regressor, Linear Regression, and Random Forest. We evaluated each model's strengths and weaknesses including their accuracy and feature importance. Based on our research we were able to recommend a hypothetical model for VAE employing generative and iterative solutions to better model earthquakes
 
+## Resources
+We utilized Prof. John Rundle's ETAS simulation code to build a surrogate model out of. 
+- [How to run ETAS](./ETAS%20Codes%20Updated%205-16-2023/ETAS/instructions.md)
+- Citations and links can be found in our Github Pages https://uva-mlsys.github.io/SurrogateSimulation/data_visualization.html
 
-
-
-## Resources:
-<details>
-<summary> <b>Useful Links </b> </summary>
-
-- [How to Set Up a Simulation](./ETAS%20Codes%20Updated%205-16-2023/ETAS/instructions.md)
-- Output Visuals
-- References
-</details>
+## Repository Contents
