@@ -11,9 +11,13 @@ We compared many iterative models including XGB Regressor, Support Vector Regres
 
 ## Resources
 We utilized Prof. John Rundle's ETAS simulation code to build a surrogate model out of. 
-- [How to run ETAS](./ETAS%20Codes%20Updated%205-16-2023/ETAS/instructions.md)
+- [How to run ETAS](./instructions.md)
 - Citations and links can be found in our Github Pages https://uva-mlsys.github.io/SurrogateSimulation/data_visualization.html
 
 ## Repository Contents
-- Formatted_ETAS_Output.csv : contains formatted output from ETAS simulation code which serves as the input data for the surrgoate
-- data_visualization.ipynb : contains input data and charts off of ETAS
+- Formatted_ETAS_Output.csv : formatted output from ETAS simulation code which serves as the input data for the surrgoate
+- proposal.md : our research proposal
+- data_visualization.ipynb : input data and charts off of ETAS
+- earthquake_surrogate.ipynb : our surrogate simulation code and models comparison and results
+- vae_model.md : proposed new VAE model
+- next_steps.md : next steps towards research
