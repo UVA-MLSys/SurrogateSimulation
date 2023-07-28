@@ -25,7 +25,15 @@ We utilized Prof. John Rundle's ETAS simulation code to build a surrogate model 
 The gh-pages branch has access to the github pages static site made using Jupyter Book
 
 ## Comparison Of Models
+![Feature Importance Of Models](model_comparison.png)
+
+A comprehensive overview of the models can be found in earthquake_surrogate.ipynb and discussed in our GitHub Pages
 
 ## VAE Model
 ![VAE Architecture Model](vae_model.png)
+
+Our proposed new model uses generative data in order to accurately simulate the randomness of earthquakes. It works using an encoder and decoder after transformation and will be trained using the data from ETAS model. For more information about the proposed model check out the Github Pages
+
+## Acknowledgment
+We would like to our advisors Prof. Judy Fox, Prof. Geoffrey Fox, and Md. Khairul Islam for their assistance with this project and their guidance and mentorship
 
