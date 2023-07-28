@@ -25,7 +25,7 @@ We utilized Prof. John Rundle's ETAS simulation code to build a surrogate model 
 The gh-pages branch has access to the github pages static site made using Jupyter Book
 
 ## Comparison Of Models
-![Feature Importance Of Models](feature_importance.png)
+
 ## VAE Model
 ![VAE Architecture Model](vae_model.png)
 
