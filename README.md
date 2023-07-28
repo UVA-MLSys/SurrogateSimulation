@@ -21,3 +21,8 @@ We utilized Prof. John Rundle's ETAS simulation code to build a surrogate model 
 - earthquake_surrogate.ipynb : our surrogate simulation code and models comparison and results
 - vae_model.md : proposed new VAE model
 - next_steps.md : next steps towards research
+
+The gh-pages branch has access to the github pages static site made using Jupyter Book
+
+## Comparison Of Models
+
